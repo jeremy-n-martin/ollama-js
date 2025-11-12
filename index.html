@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ollama - Démo minimale</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 24px; line-height: 1.4; }
+    .row { display: flex; gap: 8px; align-items: center; margin-bottom: 12px; }
+    input[type="text"] { width: 260px; padding: 8px; }
+    textarea { width: 100%; max-width: 800px; height: 120px; padding: 8px; }
+    button { padding: 8px 14px; cursor: pointer; }
+    pre { background: #f5f5f7; padding: 12px; border-radius: 8px; overflow: auto; max-width: 800px; }
+    .muted { color: #666; font-size: .9em; }
+  </style>
+</head>
+<body>
+  <h1>Ollama - Démo minimale</h1>
+  <div class="row">
+    <label for="model">Modèle</label>
+    <input id="model" type="text" value="qwen3:4b">
+    <span class="muted">Le serveur doit tourner sur localhost:11434</span>
+  </div>
+  <div>
+    <label for="prompt">Message</label>
+    <textarea id="prompt">Why is the sky blue?</textarea>
+  </div>
+  <div class="row">
+    <button id="send">Envoyer</button>
+    <span id="status" class="muted" aria-live="polite"></span>
+  </div>
+
+  <h2>Réponse</h2>
+  <pre id="output"></pre>
+
+  <script src="./app.js"></script>
+</body>
+<!--
+Astuce: en cas de blocage CORS depuis file://, servez ce dossier via un petit serveur local.
+Exemples:
+  - npx http-server -p 3000 .
+  - python3 -m http.server 3000
+Puis ouvrez http://localhost:3000
+-->
+</html>
+
+
